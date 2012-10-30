@@ -1,4 +1,6 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from HTMLParser import HTMLParser
 import urllib2, re, sys, os
 
