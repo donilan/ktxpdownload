@@ -4,6 +4,7 @@
 from HTMLParser import HTMLParser
 import urllib2, re, sys, os
 
+BACKWORD = "\r" if sys.platform.startswith('win') else chr(27)+'[A'
 
 """
 A tool for download comic.
@@ -125,14 +126,15 @@ USAGE: COMMAND KEYWORD
     for i in range(0, 10):
         r = results[i]
 
-        filename = "%s-%s.torrent" % (keyword, str(r.number))
+        filename = "%s-%04d.torrent" % (keyword, int(r.number))
         if os.path.exists(filename):
             continue
         u = urllib2.urlopen(r.link)
         f = open(filename, 'wb')
         meta = u.info()
         fileSize = int(meta.getheaders('Content-Length')[0])
-        print 'Downloading: %s Bytes: %s' % (filename, fileSize)
+
+        print ''
         fileSizeDl = 0
         blockSz = 8192
         while True:
@@ -142,8 +144,7 @@ USAGE: COMMAND KEYWORD
             
             fileSizeDl += len(buffer)
             f.write(buffer)
-            status = ur'%10d [%3.2f%%]' % (fileSizeDl, fileSizeDl * 100. / fileSize)
-            status = status + chr(8)*(len(status)+1)
-            print status,
+            print '%sDownloading: %s Bytes: %10d/%s [%3.2f%%]' % (BACKWORD, filename, fileSizeDl, fileSize, fileSizeDl * 100. / fileSize)
+
 
         f.close()
