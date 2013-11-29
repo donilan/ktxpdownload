@@ -6,13 +6,11 @@ Overview
 --------
 A tool for download anime.
 
-Installation
-------------
+Installation::
 
   $ python setup install
 
-Usage
------
+Usage::
 
   $ cd path/to/you/wait/to/store/torrent/files
   $ ktxpdownload 海贼王
