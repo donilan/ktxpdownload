@@ -1,3 +1,5 @@
 *.torrent
 *~
 *.log
+env
+*.pyc

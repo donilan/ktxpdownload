@@ -102,7 +102,7 @@ class Result():
             if self.number == None and re.match('^\d+$', t):
                 self.number = t
 
-if __name__ == '__main__':
+def main():
     if(len(sys.argv) < 2):
         print """
 USAGE: COMMAND KEYWORD
