@@ -8,13 +8,11 @@ A tool for download anime.
 
 Installation
 ------------
-:
 
   $ python setup install
 
 Usage
 -----
-:
 
   $ cd path/to/you/wait/to/store/torrent/files
   $ ktxpdownload 海贼王
