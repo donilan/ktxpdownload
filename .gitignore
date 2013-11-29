@@ -3,3 +3,6 @@
 *.log
 env
 *.pyc
+build
+dist
+ktxpdownload.egg-info
