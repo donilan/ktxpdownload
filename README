@@ -1,9 +1,9 @@
 A tool for download anime.
 
---- How to install
-$ python setup install
+--- How to install::
+  $ python setup install
 
---- usage
+--- usage::
 
   $ cd path/to/you/wait/to/store/torrent/files
   $ ktxpdownload 海贼王
